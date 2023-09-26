@@ -40,8 +40,9 @@ const evaluar = (pais) => {
      encontrar = storeInfoCountries.filter(encontrar => encontrar.name.common.toLowerCase().startsWith(pais.toLowerCase()));//encuentra los paises que coincidan con las letras ingresadas
      
      if(pais !== ''){//evalua si no esta vacio el input
+        containerCountries.style.display = 'flex';
         
-     if(encontrar.length < 10){//evaluda si es mayor a 10 la cantidad de paises
+     if(encontrar.length < 10 && encontrar[0] !== undefined){//evaluda si es mayor a 10 la cantidad de paises
             
             encontrar.forEach(element => { //funcion para imprimir las tarjetas de los paises 
                
@@ -58,7 +59,7 @@ const evaluar = (pais) => {
         containerCountries.innerHTML = '<p class="text">Su busqueda debe ser mas especifica</p>';
      }
     }else{
-        containerCountries.innerHTML = '';
+        containerCountries.style.display = 'none';
     }
 }
 
@@ -87,12 +88,14 @@ const dataComplete = (encontrar) =>{
 };
 
 const messageEnd = (data, encontrar) => { //funcion para imprimir el mensaje final cuando la bandera solo sea una
-    
+
+    let convertirNumber = (parseInt(encontrar[0].population)).toLocaleString();
+
     containerCountries.innerHTML = `<div class="card">
     <img class="imgflag" src="${encontrar[0].flags.png}" alt="">
     <p class="text">Pais: ${encontrar[0].name.common}</p>
     <p class="text">Capital: ${encontrar[0].capital[0]}</p>
-    <p class="text">Poblacion: ${encontrar[0].population}</p>
+    <p class="text">Poblacion: ${convertirNumber}</p>
     <p class="text">Region: ${encontrar[0].region}</p>
     <p class="text">Temperatura: ${data.main.temp}°C</p>
     <p class="text">Clima: ${data.weather[0].description}<span><img class="imgweather" src="https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png" alt=""></span></p>
