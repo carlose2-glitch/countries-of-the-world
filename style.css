@@ -67,6 +67,7 @@ input{
     border-radius: 0.5rem;
 }
 .text{
+    font-size: 1.2rem;
     height: 2rem;
     color: white;
     text-align: center;
@@ -117,5 +118,37 @@ input{
       top: 24px;
       height: 32px;
     }
+  }
+  @media (max-width: 425px){
+
+    .search{
+      width: 100%;
+    }
+
+    input{
+      width: 100%;
+    }
+    .containercountries{
+      width: 100%;
+    }
+    .card{
+      width: 90%;
+    }
+    .text{
+      margin: 0.5rem;
+      height: auto;
+    }
+    .text .namecountry{
+      font-weight: bold;
+      height: 2rem;
+      width: auto;
+      padding: 1rem;
+      background-color: #0284c7;
+      border-radius: 0.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
   }
   

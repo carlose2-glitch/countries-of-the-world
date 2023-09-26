@@ -48,7 +48,7 @@ const evaluar = (pais) => {
                
                 containerCards += `<div class="card">
                 <img class="imgflag" src="${element.flags.png}" alt="">
-                <p class="text">Pais:&nbsp<span>${element.name.common}</span> </p>
+                <p class="text">Pais:&nbsp<span class="namecountry">${element.name.common}</span> </p>
                 </div>`;
             });
             containerCountries.innerHTML = containerCards;//imprime los paises
