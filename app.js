@@ -1,4 +1,4 @@
-let urlCountries = 'https://restcountries.com/v5'; // url de los paises 
+let urlCountries = 'https://api.restcountries.com/countries/v5?pretty=1'; // url de los paises 
 
 let urlWheater = '';
 const searchCountry = document.getElementById('search-country');//input del buscador de paises
@@ -15,7 +15,7 @@ containerCountries.innerHTML = `<div class="lds-facebook"><div></div><div></div>
 
 const apiCountries = () =>{
 
-    fetch(urlCountries)
+    fetch(urlCountries, { headers: { 'Authorization': 'Bearer rc_live_808c8571f2034fed9fdf6391dc17362a' } })
      .then(response => response.json())
      .then(data => showData(data))
      .catch(error => console.log(error))
