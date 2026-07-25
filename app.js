@@ -1,4 +1,4 @@
-let urlCountries = 'https://restcountries.com/v5/all'; // url de los paises 
+let urlCountries = 'https://restcountries.com/v5'; // url de los paises 
 
 let urlWheater = '';
 const searchCountry = document.getElementById('search-country');//input del buscador de paises
